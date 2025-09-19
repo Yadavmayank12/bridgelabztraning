@@ -1,0 +1,36 @@
+package java1;
+
+class HotelBooking {
+    String guestName, roomType;
+    int nights;
+
+    HotelBooking() {
+        guestName = "Unknown";
+        roomType = "Standard";
+        nights = 1;
+    }
+
+    HotelBooking(String g, String r, int n) {
+        guestName = g;
+        roomType = r;
+        nights = n;
+    }
+
+    HotelBooking(HotelBooking other) {
+        guestName = other.guestName;
+        roomType = other.roomType;
+        nights = other.nights;
+    }
+}
+
+public class hotel {
+    public static void main(String[] args) {
+        HotelBooking h1 = new HotelBooking();
+        HotelBooking h2 = new HotelBooking("John", "Deluxe", 3);
+        HotelBooking h3 = new HotelBooking(h2);
+
+        System.out.println("Booking1: " + h1.guestName + ", " + h1.roomType + ", " + h1.nights);
+        System.out.println("Booking2: " + h2.guestName + ", " + h2.roomType + ", " + h2.nights);
+        System.out.println("Booking3 (copy): " + h3.guestName + ", " + h3.roomType + ", " + h3.nights);
+    }
+}
