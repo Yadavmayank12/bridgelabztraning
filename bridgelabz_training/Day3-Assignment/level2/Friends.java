@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class Friends {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter age and height of Amar, Akbar, Anthony");
         int age1 = sc.nextInt(), height1 = sc.nextInt();
         int age2 = sc.nextInt(), height2 = sc.nextInt();
         int age3 = sc.nextInt(), height3 = sc.nextInt();
