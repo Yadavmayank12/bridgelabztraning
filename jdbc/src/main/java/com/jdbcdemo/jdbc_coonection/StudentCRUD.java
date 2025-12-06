@@ -2,19 +2,19 @@ package com.jdbcdemo.jdbc_coonection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-// run this code after conn
+
 public class StudentCRUD {
 
     public static void main(String[] args) {
-        insertStudent("Satya", 21);
-        insertStudent("Shivam", 23);
+        insertStudent("Shubhi", 21);
+        insertStudent("Aditya", 23);
         readStudents();
-        updateStudent(1, "Amit  Singh  ", 22);
+        updateStudent(1, "Amit  ", 22);
         deleteStudent(2);
-        readStudents(); // see changes
+        readStudents(); 
     }
 
-    // CREATE
+    
     public static void insertStudent(String name, int age) {
         String query = "INSERT INTO students (name, age) VALUES (?, ?)";
         try (Connection con = DBConnection.getConnection();
@@ -28,7 +28,7 @@ public class StudentCRUD {
         }
     }
 
-    // READ
+   
     public static void readStudents() {
         String query = "SELECT * FROM students";
         try (Connection con = DBConnection.getConnection();
@@ -45,7 +45,7 @@ public class StudentCRUD {
         }
     }
 
-    // UPDATE
+   
     public static void updateStudent(int id, String newName, int newAge) {
         String query = "UPDATE students SET name = ?, age = ? WHERE id = ?";
         try (Connection con = DBConnection.getConnection();
@@ -60,7 +60,6 @@ public class StudentCRUD {
         }
     }    
 
-    // DELETE
     public static void deleteStudent(int id) {
         String query = "DELETE FROM students WHERE id = ?";
         try (Connection con = DBConnection.getConnection();
